@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">wnichols-FeelsBook</string>
+    <string name="emotionButton1">"Love"</string>
+    <string name="emotionButton2">"Joy"</string>
+</resources>
