@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">wnichols-FeelsBook</string>
-    <string name="emotionButton1">"Love"</string>
-    <string name="emotionButton2">"Joy"</string>
+    <string name="emotionsTitle">"Emotions:"</string>
+    <string name="emotionCountsTitle">"Count:"</string>
+    <string name="emotion1ButtonText">"Love"</string>
+    <string name="emotion2ButtonText">"Joy"</string>
+    <string name="emotion3ButtonText">"Surprise"</string>
+    <string name="emotion4ButtonText">"Anger"</string>
+    <string name="emotion5ButtonText">"Sadness"</string>
+    <string name="emotion6ButtonText">"Fear"</string>
 </resources>

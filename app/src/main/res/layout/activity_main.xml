@@ -1,66 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.williamnichols.wnichols_feelsbook.MainActivity"
-    tools:layout_editor_absoluteY="25dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/HoriLayoutContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
 
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:id="@+id/leftSpacer"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.15">
+        </RelativeLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/mainContent"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.7">
 
-            <Button
-                android:id="@+id/emotionButton1"
-                android:layout_width="200dp"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/emotionButton1"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:text="TextView" />
-        </TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
 
-            <Button
-                android:id="@+id/emotionbutton2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/emotionButton2"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </TableRow>
+                        <TextView
+                            android:id="@+id/emotionsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="@string/emotionsTitle"
+                            android:textSize="24sp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                    </RelativeLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotionCountsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="@string/emotionCountsTitle"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion1Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion1ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion1Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion2Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion2ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion2Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion3Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion3ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion3Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion4Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion4ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion4Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion5Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion5ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion5Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.70"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/emotionButtons_6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.70">
+
+                        <Button
+                            android:id="@+id/emotion6Button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/emotion6ButtonText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/emotionCounts_6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30">
+
+                        <TextView
+                            android:id="@+id/emotion6Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:text="100"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/viewHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.70"
+                    android:text="View History"></Button>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightSpacer"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.15"></RelativeLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
