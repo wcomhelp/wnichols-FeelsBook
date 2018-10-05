@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method saves an arrayList into a Json file of FILENAME.
+     * @throws RuntimeException if the file is not found or fromJson throws an IOException
+     */
     private void saveToFile() {
         try {
             FileOutputStream fileOutputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
