@@ -102,6 +102,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method handles the onClick of emotion buttons.
+     *
+     * First addRecord is called with the view cast to type Button to add the button to
+     * the list of emotions.
+     * Next updateCount is called to update the emotionCount on the Main screen
+     * Lastly the list of emotions is saved with saveToFile.
+     *
+     * @param view the view of the button pressed
+     */
     public void handleEmotion(View view) {
         addRecord((Button) view);
         updateCount((Button) view);
