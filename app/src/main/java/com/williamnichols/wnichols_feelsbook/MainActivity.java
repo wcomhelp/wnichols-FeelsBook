@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 emotionList = new ArrayList<>(); // this handles that.
             }
 
+            fileInputStream.close();
         } catch (FileNotFoundException e) {
             emotionList = new ArrayList<>();
         } catch (JsonSyntaxException e) {
