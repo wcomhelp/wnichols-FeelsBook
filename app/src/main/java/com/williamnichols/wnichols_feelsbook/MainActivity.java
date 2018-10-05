@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void loadFromFile() {
+    private void loadFromFile() throws RuntimeException {
         try {
             FileInputStream fileInputStream = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fileInputStream));
@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (FileNotFoundException e) {
             emotionList = new ArrayList<>();
+        } catch (JsonSyntaxException e) {
+            throw new RuntimeException();
         } catch (IOException e) {
             throw new RuntimeException();
         }
