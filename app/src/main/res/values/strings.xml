@@ -8,8 +8,9 @@
     <string name="emotion4ButtonText">"Anger"</string>
     <string name="emotion5ButtonText">"Sadness"</string>
     <string name="emotion6ButtonText">"Fear"</string>
-    <string name="commentHint">"Enter 100 characters"</string>
-    <string name="commentText">"Enter a comment below:"</string>
+    <string name="commentTitle">"Enter an optional comment below:"</string>
+    <string name="commentText">"Enter up to 100 characters"</string>
     <string name="title_activity_view_history">viewHistory</string>
-    <string name="historyText">History:</string>
+
+    <string name="historyTitle">History:</string>
 </resources>
