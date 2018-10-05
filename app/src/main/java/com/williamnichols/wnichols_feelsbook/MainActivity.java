@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        // TODO Auto-generated method stub
         super.onStart();
 
         loadFromFile();
