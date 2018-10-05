@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
             Type listType = new TypeToken<ArrayList<Emotion>>(){}.getType();
             emotionList = gson.fromJson(in, listType);
+            if (emotionList == null) { // If the file is empty the gson library returns null
+                emotionList = new ArrayList<>(); // this handles that.
+            }
 
         } catch (FileNotFoundException e) {
             emotionList = new ArrayList<>();
