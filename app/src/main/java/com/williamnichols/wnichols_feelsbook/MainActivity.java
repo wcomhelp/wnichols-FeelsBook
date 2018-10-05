@@ -119,6 +119,15 @@ public class MainActivity extends AppCompatActivity {
     }
     }
 
+    /**
+     * This method adds the record of the emotion to the emotionList.
+     *
+     * First a new instance of the emotion class is created.
+     * Next the properties are added to the new new instance of emotion.
+     * Lastly the emotion is saved in the arrayList of emotions, emotionList.
+     *
+     * @param emotionButton the button pressed
+     */
     public void addRecord(Button emotionButton) {
         Emotion emotion = new Emotion();
         emotion.setEmotionName((String)emotionButton.getText());
