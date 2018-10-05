@@ -344,7 +344,7 @@
                     android:maxLength="100"
                     android:ems="10"
                     android:hint="@string/commentText"
-                    android:inputType="textPersonName" />
+                    android:inputType="text" />
 
                 <Button
                     android:id="@+id/viewHistory"
