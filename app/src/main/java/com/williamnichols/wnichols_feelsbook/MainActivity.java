@@ -117,6 +117,17 @@ public class MainActivity extends AppCompatActivity {
         updateCount((Button) view);
         saveToFile();
     }
+
+    /**
+     * This method handles the onClick of the View History button.
+     *
+     * The intent is changed to viewHistory.
+     *
+     * @param view the view of the button pressed
+     */
+    public void handleViewHistory(View view) {
+        Intent intent = new Intent(this, viewHistory.class);
+        startActivity(intent);
     }
 
     /**
@@ -139,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
         emotion.setEmotionMessage(commentMessage);
         this.emotionList.add(emotion);
     }
+
     /* Updates the emotionCount on the Main screen */
     /**
      * This method updates the emotionCount on the Main screen
