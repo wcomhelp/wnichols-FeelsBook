@@ -113,8 +113,13 @@ public class MainActivity extends AppCompatActivity {
         Emotion emotion = new Emotion();
         emotion.setEmotionName((String)emotionButton.getText());
         emotion.setEmotionDate(new Date());
-        emotion.setEmotionMessage("Testing");
-        emotionList.add(emotion);
+        EditText commentText = findViewById(R.id.commentText);
+        String commentMessage = commentText.getText().toString();
+        commentText.clearFocus();
+        commentText.setText("");
+        emotion.setEmotionMessage(commentMessage);
+        this.emotionList.add(emotion);
+    }
     /* Updates the emotionCount on the Main screen */
     /**
      * This method updates the emotionCount on the Main screen
