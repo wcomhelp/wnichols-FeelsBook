@@ -18,7 +18,13 @@
         </activity>
         <activity
             android:name=".viewHistory"
-            android:label="@string/title_activity_view_history"></activity>
+            android:label="@string/title_activity_view_history"
+            android:parentActivityName=".MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>
