@@ -30,6 +30,7 @@ public class viewHistory extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_history);
         loadFromFile();
+        updateHistoryList();
     }
 
     /**
@@ -78,5 +79,9 @@ public class viewHistory extends Activity {
         } catch (IOException e) {
             throw new RuntimeException();
         }
+    }
+
+    private void updateHistoryList() {
+
     }
 }
