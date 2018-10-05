@@ -78,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void handleEmotion(Button emotionButton) {
-        addRecord(emotionButton);
+    public void handleEmotion(View view) {
+        addRecord((Button) view);
+    }
     }
 
     public void addRecord(Button emotionButton) {
