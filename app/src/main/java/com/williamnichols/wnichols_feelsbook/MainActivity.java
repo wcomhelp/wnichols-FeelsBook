@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Emotion> emotionList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
