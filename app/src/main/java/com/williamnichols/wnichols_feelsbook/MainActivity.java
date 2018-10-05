@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleEmotion(View view) {
         addRecord((Button) view);
+        updateCount((Button) view);
         saveToFile();
     }
     }
@@ -114,5 +115,43 @@ public class MainActivity extends AppCompatActivity {
         emotion.setEmotionDate(new Date());
         emotion.setEmotionMessage("Testing");
         emotionList.add(emotion);
+    /* Updates the emotionCount on the Main screen */
+    /**
+     * This method updates the emotionCount on the Main screen
+     *
+     * Checks which button has the same ID as the button pressed,
+     * sets emotionCountID to the ID of the count of the associated button.
+     * Next the count is increased and updated.
+     *
+     * @param emotionButton the button pressed
+     */
+    public void updateCount(Button emotionButton) {
+        TextView emotionCountID;
+        /* Check which button has the same ID as the button pressed if so,
+         * set emotionCountID to the id of the count associated with
+         * the button. */
+        if (emotionButton.getId() == R.id.emotion1Button) {
+            emotionCountID = findViewById(R.id.emotion1Count);
+        }
+        else if (emotionButton.getId() == R.id.emotion2Button) {
+            emotionCountID = findViewById(R.id.emotion2Count);
+        }
+        else if (emotionButton.getId() == R.id.emotion3Button) {
+            emotionCountID = findViewById(R.id.emotion3Count);
+        }
+        else if (emotionButton.getId() == R.id.emotion4Button) {
+            emotionCountID = findViewById(R.id.emotion4Count);
+        }
+        else if (emotionButton.getId() == R.id.emotion5Button) {
+            emotionCountID = findViewById(R.id.emotion5Count);
+        }
+        else if (emotionButton.getId() == R.id.emotion6Button) {
+            emotionCountID = findViewById(R.id.emotion6Count);
+        }
+        else {throw new RuntimeException();}
+
+        int emotionCount = Integer.parseInt(emotionCountID.getText().toString());
+        emotionCount++;
+        emotionCountID.setText(String.valueOf(emotionCount));
     }
 }
