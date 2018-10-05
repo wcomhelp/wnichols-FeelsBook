@@ -177,6 +177,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:onClick="handleEmotion"
                             android:text="@string/emotion3ButtonText" />
 
                     </RelativeLayout>
@@ -219,6 +220,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:onClick="handleEmotion"
                             android:text="@string/emotion4ButtonText" />
 
                     </RelativeLayout>
@@ -260,6 +262,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:onClick="handleEmotion"
                             android:text="@string/emotion5ButtonText" />
 
                     </RelativeLayout>
@@ -301,6 +304,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:onClick="handleEmotion"
                             android:text="@string/emotion6ButtonText" />
 
                     </RelativeLayout>
