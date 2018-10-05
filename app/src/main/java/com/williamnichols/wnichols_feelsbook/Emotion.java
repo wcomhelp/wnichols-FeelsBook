@@ -7,7 +7,8 @@ import java.util.Date;
  */
 
 public class Emotion {
-    /* Declaration of variables:
+    /**
+     * Declaration of variables:
      * emotionName:    the name of the emotion
      * emotionDate:    the date the emotion took place
      * emotionMessage: the optional message included with the emotion

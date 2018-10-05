@@ -27,31 +27,21 @@ import com.google.gson.reflect.TypeToken;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FILENAME = "feelsbook.sav";
+    public static final String FILENAME = "feelsbook.sav";
 
     private ArrayList<Emotion> emotionList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
 
         loadFromFile();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        saveToFile();
-
+        updateCountFromEmotionList(emotionList);
     }
 
     /**
@@ -114,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void handleEmotion(View view) {
         addRecord((Button) view);
-        updateCount((Button) view);
         saveToFile();
     }
 
@@ -126,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the view of the button pressed
      */
     public void handleViewHistory(View view) {
-        Intent intent = new Intent(this, viewHistory.class);
+        Intent intent = new Intent(MainActivity.this, viewHistory.class);
         startActivity(intent);
     }
 
@@ -135,7 +124,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * First a new instance of the emotion class is created.
      * Next the properties are added to the new new instance of emotion.
-     * Lastly the emotion is saved in the arrayList of emotions, emotionList.
+     * Next the emotion is saved in the arrayList of emotions, emotionList.
+     * Lastly the count on screen is updated.
      *
      * @param emotionButton the button pressed
      */
@@ -149,45 +139,76 @@ public class MainActivity extends AppCompatActivity {
         commentText.setText("");
         emotion.setEmotionMessage(commentMessage);
         this.emotionList.add(emotion);
+        int emotionCount = Integer.parseInt(
+                ((TextView) findViewById(getEmotionCountID(emotion))).getText().toString());
+        emotionCount++;
+        ((TextView) findViewById(getEmotionCountID(emotion))).setText(String.valueOf(emotionCount));
+        saveToFile();
     }
 
-    /* Updates the emotionCount on the Main screen */
     /**
-     * This method updates the emotionCount on the Main screen
+     * This method updates the emotionCounts on the Main screen when given a emotionList
      *
      * Checks which button has the same ID as the button pressed,
      * sets emotionCountID to the ID of the count of the associated button.
      * Next the count is increased and updated.
      *
-     * @param emotionButton the button pressed
+     * @param emotionList the ArrayList<Emotion> that you would like to use to update the counts
      */
-    public void updateCount(Button emotionButton) {
-        TextView emotionCountID;
-        /* Check which button has the same ID as the button pressed if so,
-         * set emotionCountID to the id of the count associated with
-         * the button. */
-        if (emotionButton.getId() == R.id.emotion1Button) {
-            emotionCountID = findViewById(R.id.emotion1Count);
+    public void updateCountFromEmotionList(ArrayList<Emotion> emotionList) {
+        resetCounters();
+        for (int i = 0; i < emotionList.size(); i++) {
+            int emotionCountID = getEmotionCountID(emotionList.get(i));
+            int emotionCount = Integer.parseInt((
+                    (TextView) findViewById(emotionCountID)).getText().toString());
+            emotionCount++;
+            ((TextView) findViewById(emotionCountID)).setText(String.valueOf(emotionCount));
         }
-        else if (emotionButton.getId() == R.id.emotion2Button) {
-            emotionCountID = findViewById(R.id.emotion2Count);
+    }
+
+    /**
+     * This method gets the ID of the emotion count that matches the name of the input Emotion
+     *
+     * First emotion.getEmotionName gets the emotion name and this is matched against each
+     * buttons name. If a match occurs, the ID of the corresponding emotion count is returned.
+     *
+     * @param emotion the Emotion to check the name of
+     * @return id of the emotion count
+     * @throws RuntimeException if no emotion matches the text of the input Emotion.
+     */
+    public int getEmotionCountID(Emotion emotion) {
+        if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion1Button)).getText().toString())) {
+            return R.id.emotion1Count;
         }
-        else if (emotionButton.getId() == R.id.emotion3Button) {
-            emotionCountID = findViewById(R.id.emotion3Count);
+        else if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion2Button)).getText().toString())) {
+            return R.id.emotion2Count;
         }
-        else if (emotionButton.getId() == R.id.emotion4Button) {
-            emotionCountID = findViewById(R.id.emotion4Count);
+        else if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion3Button)).getText().toString())) {
+            return R.id.emotion3Count;
         }
-        else if (emotionButton.getId() == R.id.emotion5Button) {
-            emotionCountID = findViewById(R.id.emotion5Count);
+        else if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion4Button)).getText().toString())) {
+            return R.id.emotion4Count;
         }
-        else if (emotionButton.getId() == R.id.emotion6Button) {
-            emotionCountID = findViewById(R.id.emotion6Count);
+        else if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion5Button)).getText().toString())) {
+            return R.id.emotion5Count;
+        }
+        else if (emotion.getEmotionName().equals(
+                ((Button) findViewById(R.id.emotion6Button)).getText().toString())) {
+            return R.id.emotion6Count;
         }
         else {throw new RuntimeException();}
-
-        int emotionCount = Integer.parseInt(emotionCountID.getText().toString());
-        emotionCount++;
-        emotionCountID.setText(String.valueOf(emotionCount));
+    }
+    public void resetCounters() {
+        ((TextView) findViewById(R.id.emotion1Count)).setText(String.valueOf(0));
+        ((TextView) findViewById(R.id.emotion2Count)).setText(String.valueOf(0));
+        ((TextView) findViewById(R.id.emotion3Count)).setText(String.valueOf(0));
+        ((TextView) findViewById(R.id.emotion4Count)).setText(String.valueOf(0));
+        ((TextView) findViewById(R.id.emotion5Count)).setText(String.valueOf(0));
+        ((TextView) findViewById(R.id.emotion6Count)).setText(String.valueOf(0));
     }
 }
