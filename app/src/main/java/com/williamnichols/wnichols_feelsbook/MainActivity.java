@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        saveInFile();
     }
 
     @Override
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void saveInFile() {
+    private void saveToFile() {
         try {
             FileOutputStream fileOutputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleEmotion(View view) {
         addRecord((Button) view);
+        saveToFile();
     }
     }
 
