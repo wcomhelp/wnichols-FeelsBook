@@ -25,23 +25,26 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.7">
 
-            <TextView
-                android:id="@+id/commentText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.70"
-                android:text="@string/historyText"
-                android:textSize="24sp" />
-
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_centerInParent="true"
                 android:orientation="vertical">
 
-                <ListView
+                <TextView
+                    android:id="@+id/historyText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="@string/historyTitle"
+                    android:textSize="24sp" />
+
+                <ListView
+                    android:id="@+id/historyList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:scrollbars="vertical" />
             </LinearLayout>
 
         </RelativeLayout>
