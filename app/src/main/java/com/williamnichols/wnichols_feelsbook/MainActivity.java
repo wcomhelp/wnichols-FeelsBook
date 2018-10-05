@@ -46,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        saveToFile();
+
+    }
+
+    /**
+     * This method loads a Json file of FILENAME and reads it into an arrayList.
+     * @throws RuntimeException if fromJson throws a JsonSyntaxException or an IOException
+     */
     private void loadFromFile() throws RuntimeException {
         try {
             FileInputStream fileInputStream = openFileInput(FILENAME);
