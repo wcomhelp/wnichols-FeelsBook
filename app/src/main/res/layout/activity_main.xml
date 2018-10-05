@@ -333,12 +333,12 @@
                     android:text="@string/commentTitle" />
 
                 <EditText
-                    android:id="@+id/commentHint"
+                    android:id="@+id/commentText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.70"
                     android:ems="10"
-                    android:hint="@string/commentHint"
+                    android:hint="@string/commentText"
                     android:inputType="textPersonName" />
 
                 <Button
