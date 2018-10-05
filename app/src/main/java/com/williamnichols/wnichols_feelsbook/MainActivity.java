@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
             fileOutputStream.close();
         } catch (FileNotFoundException e) {
-            // TODO: Handle the Exception properly later
             throw new RuntimeException();
         } catch (IOException e) {
             throw new RuntimeException();
