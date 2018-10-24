@@ -6,4 +6,5 @@ A simple, attractive, intuitive, mobile app to record feeings quickly. This app 
     * View and edit the details past emotions.
     * Delete a past emotion.
 
-All code is my own. ©2018 - William Nichols
+All code is my own.
+©2018 - William Nichols
