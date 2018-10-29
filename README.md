@@ -5,6 +5,6 @@ A simple, attractive, intuitive, mobile app to record feeings quickly. This app 
    * Browse and view the history of emotions.
    * View and edit the details past emotions.
    * Delete a past emotion.
-
-All code is my own.
-©2018 - William Nichols
+A video demonstrating the functionality of the app is available [here](https://youtu.be/TsQJ8-GRrcs).  
+All code is my own.  
+©2018 - William Nichols  
